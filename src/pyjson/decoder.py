@@ -1,7 +1,6 @@
 from typing import Tuple
 
 class JSONDecoderError(Exception):
-    """ """
     def __init__(self, json_str: str, pos: int):
         line: int = json_str.count('\n', 0, pos) + 1
         column: int = pos - json_str.rfind('\n', 0, pos)
