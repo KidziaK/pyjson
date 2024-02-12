@@ -40,7 +40,6 @@ class JSONDecoder:
         ret, _ = self.inner_decode(json_str, 0)
         return ret
 
-    
     def inner_decode(self, json_str: str, pos) -> Tuple[object, int]:
         i = pos
 
@@ -60,7 +59,6 @@ class JSONDecoder:
         
         raise JSONDecoderError(json_str, i)
         
-    
     def decode_value(self, json_str: str, pos: int):
         i = pos
         c = json_str[i]
@@ -100,7 +98,6 @@ class JSONDecoder:
 
         return ret, i
         
-
     def decode_array(self, json_str: str, pos: int):
         ret = []
         i = pos + 1
@@ -142,7 +139,6 @@ class JSONDecoder:
             return self.decode_float(val), inc
         else:
             return self.decode_int(val), inc
-
 
     def decode_int(self, val: str):
         return int(val)
